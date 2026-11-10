@@ -7,7 +7,7 @@ authors:
     affiliation: "THE PATTERN MIND, Leipzig"
 version: "1.0.0"
 date-released: "2026-11-10"
-license: repository-code: "https://github.com/Thomas-Marcus/energiesystem-deutschland"
+license:    repository-code: "https://github.com/Thomas-Marcus/energiesystem-deutschland"
 keywords:
   - energy transition
   - residual load
