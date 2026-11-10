@@ -1,0 +1,11 @@
+C2 · Spitzenzerlegung 2015 → 2025 (Mittel der 100 Stunden mit höchster Residuallast)
+ΔResiduallast = -7.67 GW
+  Beitrag Netzlast      -4.46 GW
+  Beitrag Wind an Land  -1.28 GW
+  Beitrag Wind auf See  -1.34 GW
+  Beitrag PV            -0.58 GW
+Anteil Netzlast am Betrag der Veränderung: 58 %
+Wachstum Wind+PV-Jahreserzeugung: +81 %
+Urteil H2: Rückgang überwiegend lastgetrieben
+Hinweis: SMARD-Netzlast auf Definitions- oder Abdeckungsänderungen zwischen den Jahren prüfen
+(Jahressummen in c2_kennzahlen.csv).

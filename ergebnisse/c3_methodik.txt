@@ -1,0 +1,7 @@
+C3 · Dunkelflauten und Speicherbedarf
+Kapazitätsfaktor Wind+PV = (Wind an Land + Wind auf See + PV) / installierte Leistung dieser Technologien.
+Dunkelflaute = zusammenhängende Periode mit Kapazitätsfaktor < Schwelle ([0.1, 0.15]) über mindestens [24, 48] Stunden.
+Speicherbedarf E(F): Defizitzähler D steigt um (R − F), wenn die Residuallast R über der gesicherten Leistung F
+liegt, und sinkt um (F − R) × η sonst (η = 0.9); E(F) = Maximum von D.
+Grenzen: Importe nicht berücksichtigt (Obergrenze); Biomasse/Wasserkraft nicht als gesichert gerechnet;
+Speicher- und Kraftwerksstandorte sowie Netzrestriktionen nicht abgebildet.

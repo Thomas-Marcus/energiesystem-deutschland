@@ -1,0 +1,4 @@
+﻿Jahr;Top-100 Residuallast [GW];Top-100 Netzlast [GW];Top-100 Wind an Land [GW];Top-100 Wind auf See [GW];Top-100 PV [GW];Spitze Residuallast [GW];Spitze Netzlast [GW];Spitze Wind+PV [GW];Spitze Zeitpunkt;Netzlast Jahressumme [TWh];Wind+PV Jahressumme [TWh];Top-100 Anteil Dez–Feb [%];Top-100 Anteil 16–21 Uhr [%];CF Jahr Wind an Land [%];CF Top-100 Wind an Land [%];CF Jahr Wind auf See [%];CF Top-100 Wind auf See [%];CF Jahr PV [%];CF Top-100 PV [%]
+2015;71,711;74,049;1,557;0,161;0,620;75,511;75,949;0,438;20.01.2015 17:00;501,992;114,066;86,000;55,000;20,589;4,054;43,642;10,822;10,282;1,623
+2020;67,055;71,564;2,421;1,247;0,842;72,275;74,361;2,086;10.12.2020 17:00;485,357;175,751;70,000;45,000;21,847;4,484;39,669;15,991;10,089;1,584
+2025;64,040;69,586;2,839;1,504;1,203;68,276;72,761;4,486;03.12.2025 17:00;465,818;206,746;84,000;47,000;18,513;4,344;31,659;16,003;7,633;1,107

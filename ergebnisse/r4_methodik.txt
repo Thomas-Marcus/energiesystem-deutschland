@@ -1,0 +1,6 @@
+R4 · Plausibilisierung der SMARD-Netzlast
+Jahressumme der stündlichen SMARD-Netzlast gegen den Bruttostromverbrauch der Energiebilanz (AGEB/BDEW).
+Bruttostromverbrauch enthält zusätzlich Kraftwerkseigenverbrauch, Netzverluste, Pumparbeit, industrielle
+Eigenerzeugung und Bahnstrom; das Verhältnis beider Reihen ist deshalb kleiner als 1.
+Bestätigt, wenn beide Reihen in dieselbe Richtung laufen und der Rückgang im Brutto mindestens halb so groß ist.
+Bruttostromverbrauch 2025 vorläufig; Revisionen der Energiebilanz verändern einzelne Jahreswerte.

@@ -1,0 +1,3 @@
+﻿Modell;b [€/MWh je Prozentpunkt];Standardfehler;p OLS;SE Newey-West;p Newey-West;n;t;R²;KI 2,5 % (Jahresblöcke);KI 97,5 % (Jahresblöcke);Anteil b > 0 [%]
+Monatskontrollen;9,887;1,771;0,000;1,496;0,000;84,000;5,583;0,363;2,949;22,463;98,500
+Monatskontrollen + Preisniveau;7,761;0,626;0,000;0,550;0,000;84,000;12,398;0,923;2,902;8,748;99,850

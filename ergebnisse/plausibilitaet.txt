@@ -1,0 +1,42 @@
+[OK ] C1 Reproduktion Ist-Residuallast 2023 – max. Abweichung 1.39e-16
+[OK ] C1 V3 Tagesenergie 2023
+[OK ] C1 Reproduktion Ist-Residuallast 2024 – max. Abweichung 1.37e-16
+[OK ] C1 V3 Tagesenergie 2024
+[OK ] C1 Reproduktion Ist-Residuallast 2025 – max. Abweichung 2.74e-16
+[OK ] C1 V3 Tagesenergie 2025
+[OK ] C1 Sektorkopplung: Zusatzenergie exakt – 45.000 TWh
+[OK ] C2 Zerlegung summiert sich exakt – ΔR = -7.6717 GW, Summe = -7.6717 GW
+[OK ] R1 Zerlegungen summieren sich exakt (alle Jahre, alle Top-N)
+[OK ] C3 E(F) = 0 für F > max. Residuallast (2015)
+[OK ] C3 E(F) = 0 für F > max. Residuallast (2016)
+[OK ] C3 E(F) = 0 für F > max. Residuallast (2017)
+[OK ] C3 E(F) = 0 für F > max. Residuallast (2018)
+[OK ] C3 E(F) = 0 für F > max. Residuallast (2019)
+[OK ] C3 E(F) = 0 für F > max. Residuallast (2020)
+[OK ] C3 E(F) = 0 für F > max. Residuallast (2021)
+[OK ] C3 E(F) = 0 für F > max. Residuallast (2022)
+[OK ] C3 E(F) = 0 für F > max. Residuallast (2023)
+[OK ] C3 E(F) = 0 für F > max. Residuallast (2024)
+[OK ] C3 E(F) = 0 für F > max. Residuallast (2025)
+[OK ] C3 E(F) = 0 für F > max. Residuallast (2030 (Wetter 2025))
+[OK ] C4 realistisch ≤ Obergrenze (2024, 1 h)
+[OK ] C4 realistisch ≤ Obergrenze (2024, 2 h)
+[OK ] C4 realistisch ≤ Obergrenze (2024, 4 h)
+[OK ] C4 realistisch ≤ Obergrenze (2025, 1 h)
+[OK ] C4 realistisch ≤ Obergrenze (2025, 2 h)
+[OK ] C4 realistisch ≤ Obergrenze (2025, 4 h)
+[OK ] C4 konstante Preise → Erlös ≤ 0
+[OK ] C6 ohne Monats-Dummies gleiches Vorzeichen wie Spearman-ρ (Monat)
+[OK ] C8 Monatswerte vollständig (12 je Jahr)
+[OK ] C7 Netto = Export − Import (2015) – mittlere Abweichung 0.00 MWh
+[OK ] C7 Netto = Export − Import (2016) – mittlere Abweichung 0.00 MWh
+[OK ] C7 Netto = Export − Import (2017) – mittlere Abweichung 0.00 MWh
+[OK ] C7 Netto = Export − Import (2021) – mittlere Abweichung 0.00 MWh
+[OK ] C7 Netto = Export − Import (2022) – mittlere Abweichung 0.00 MWh
+[OK ] C7 Netto = Export − Import (2023) – mittlere Abweichung 0.03 MWh
+[OK ] C7 Netto = Export − Import (2024) – mittlere Abweichung 0.03 MWh
+[OK ] C7 Netto = Export − Import (2025) – mittlere Abweichung 0.02 MWh
+[OK ] C7 Handelsdaten je Jahr nahezu vollständig
+[OK ] D1 Summe 2017 = 29,16 ct/kWh – 29.16
+[OK ] D3 Reproduktion Deck-Break-even ≈ 113 Ladungen/Tag (ohne Leistungspreis, DB 0,20) – 113.0
+[OK ] D4 Reproduktion Deck: 6.000 € → ca. −700 € (ohne Alterung, Pfad 0, ohne Solarspitzen) – -697 €

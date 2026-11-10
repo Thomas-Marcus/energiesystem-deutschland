@@ -1,0 +1,10 @@
+C1 · Profil-Skalierung 2030
+Stündlicher Kapazitätsfaktor je Technologie = SMARD-Erzeugung / installierte Leistung (linear interpoliert).
+Erzeugung 2030 = Kapazitätsfaktor × Zielleistung (PV 215.0 GW, Wind an Land 115.0 GW, Wind auf See 30.0 GW).
+Last: V0 unverändert, V1 +10 %, V2 +20 %, V3 +20 % mit der Hälfte des Zuwachses tagesintern in Stunden
+niedrigster Residuallast verschoben (Obergrenze je Stunde = doppelter gleichmäßiger Zuwachs).
+Speicher, überschussorientiert: laden bei negativer, entladen bei positiver Residuallast; Leistung = Energie/4 h; η = 0.9.
+Speicher, spitzenorientiert: niedrigste Schwelle θ, über der der Speicher (zu Jahresbeginn voll) jede Stunde deckt;
+Nachladung aus freier Kapazität unterhalb θ (binäre Suche). Beide Fahrweisen schließen sich gegenseitig aus.
+Grenzen: kein Netz, kein europäischer Austausch, keine Abregelungslogik, Wetterjahre der Vergangenheit.
+Das Modell zeigt Größenordnungen, keine Prognose.

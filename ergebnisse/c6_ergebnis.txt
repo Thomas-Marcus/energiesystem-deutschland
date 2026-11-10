@@ -1,0 +1,10 @@
+C6 · Robuste Kannibalisierung
+Spearman ρ Jahresbasis (n = 7): -0.75
+Spearman ρ Monatsbasis (n = 84): -0.84, t = -13.9
+Regression mit Monats-Dummies: b = -3.81 Prozentpunkte Capture Rate je Prozentpunkt PV-Anteil (Standardfehler 0.23, t = -16.4, R² = 0.88)
+Ohne Monats-Dummies: b = -2.01
+Bestehende Deck-Werte: ρ = −0,93 (n = 24) → t = -11.9; ρ = +0,73 (n = 24) → t = 5.0
+Hinweis: Saisonautokorrelation verkleinert die effektive Stichprobe; t-Werte sind optimistisch.
+Bootstrap (2000 Wiederholungen), 95-%-Intervall für b:
+  Monate i.i.d.  [-4.29; -3.34], Median -3.81, Anteil b < 0: 100.0 %
+  Jahresblöcke   [-4.50; -2.54], Median -3.81, Anteil b < 0: 100.0 %

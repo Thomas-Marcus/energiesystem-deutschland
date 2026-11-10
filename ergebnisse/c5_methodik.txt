@@ -1,0 +1,7 @@
+C5 · Merit-Order-Regression
+Stündliche Paare aus Residuallast und Day-Ahead-Preis je Jahr; Median und Klassen à 5 GW (mind. 50 Stunden).
+Lineare Regression Preis = a + b × Residuallast im Bereich 20–50 GW; b in €/MWh je GW, R² ausgewiesen.
+Standardfehler klassisch (OLS) und nach Newey-West mit 24 Verzögerungen (Autokorrelation der Stundenwerte);
+p-Werte zweiseitig, Normalverteilungsapproximation.
+Deskriptiv: Brennstoff- und CO₂-Preise, Must-Run, Export und Viertelstundenhandel wirken mit.
+Preise vor 10/2018 (Zone DE-AT-LU) sind über die SMARD-Chart-API nicht verfügbar.

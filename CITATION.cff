@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "Bitte zitieren Sie diese Software wie folgt. / Please cite this software as below."
+title: "Energiesystem Deutschland 2015–2025: Programme zur Systemanalyse"
+authors:
+  - family-names: "Köhler"
+    given-names: "Thomas Marcus"
+    affiliation: "THE PATTERN MIND, Leipzig"
+version: "1.0.0"
+date-released: "2026-11-10"
+license: MIT
+keywords:
+  - energy transition
+  - residual load
+  - electricity market
+  - flexibility
+  - SMARD

@@ -1,0 +1,6 @@
+C2 · Spitzenzerlegung und Kapazitätskredit
+Je Jahr die 100 Stunden mit höchster Residuallast; Mittelwerte von Netzlast, Wind an Land, Wind auf See, PV.
+Zerlegung: ΔR = ΔNetzlast − ΔWind an Land − ΔWind auf See − ΔPV (exakt, da R = L − W − PV).
+Kapazitätskredit-Näherung: Kapazitätsfaktor in den Top-100-Stunden = Erzeugung / installierte Leistung.
+Grenzen: deskriptive Zerlegung, keine Kausalaussage; mögliche Änderungen der SMARD-Netzlastdefinition
+zwischen den Jahren beeinflussen den Lastbeitrag.

@@ -1,0 +1,6 @@
+C8 · Flexibilitätswert (H3): Tagesspreizung gegen PV-Anteil
+Spearman ρ Jahreswerte (n = 7): +0.75; Monatswerte (n = 84): +0.29
+Monatskontrollen: b = +9.89 €/MWh je Prozentpunkt PV (t = 5.6, R² = 0.36), 95-%-KI Jahresblöcke [+2.95; +22.46]
+Monatskontrollen + Preisniveau: b = +7.76 €/MWh je Prozentpunkt PV (t = 12.4, R² = 0.92), 95-%-KI Jahresblöcke [+2.90; +8.75]
+Urteil H3 (mit Preisniveau als Kontrolle): gestützt
+Hinweis: Das Preisniveau kontrolliert den Einfluss von Brennstoffpreisen (u. a. Krise 2022) auf die Spreizung.

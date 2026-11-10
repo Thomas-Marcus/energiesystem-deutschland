@@ -1,0 +1,6 @@
+﻿Variante;Kapitalwert [€];Deckungsbeitrag [€/kWh];Spitze [kW];Leistungspreis [€/a];Ladungen je Ladepunkt und Tag;Zeitauslastung [%];Break-even Ladungen/Tag
+Ohne Leistungspreis (Deck Folie 47);634832,184;0,200;1200,000;0,000;37,500;18,229;112,971
+Mit Leistungspreis, ohne Hochlauf;-170377,584;0,200;1200,000;120000,000;37,500;18,229;159,938
+Mit Leistungspreis, ohne Hochlauf + Batterie;97227,300;0,200;600,000;60000,000;37,500;18,229;144,329
+Mit Leistungspreis und Hochlauf;-429951,915;0,200;1200,000;120000,000;37,500;18,229;177,894
+Mit Leistungspreis und Hochlauf + Batterie;-162347,031;0,200;600,000;60000,000;37,500;18,229;160,533

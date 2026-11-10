@@ -1,0 +1,6 @@
+D5 · Modellkommune (10.000 Haushalte)
+Pufferdauer: 5.0 MWh / 20.0 MW = 15 Minuten PV-Spitzenleistung.
+Gleichzeitige Ladeleistung: 50 × 150 kW = 7.5 MW.
+Sonnigster Tag 20.06.2025: PV 87.0 MWh, Verbrauch 84.8 MWh, Überschuss 39.9 MWh.
+Der Speicher nimmt höchstens 5.0 MWh auf = 13 % des Tagesüberschusses.
+Lastprofil: Form der nationalen Netzlast, skaliert auf den Haushaltsverbrauch (Näherung).

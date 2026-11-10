@@ -1,0 +1,12 @@
+C4 · Batterie-Backtest
+Speicher 10 MW, Dauer [1, 2, 4] h, Rundlauf-Wirkungsgrad 0.9, Verschleiß 5.0 €/MWh Entladung.
+Obergrenze: dynamische Programmierung über das ganze Jahr mit vollständiger Voraussicht (Stufe = 1 h Leistung).
+Realistisch: Fahrplan je Tag mit den Preisen des Vortags optimiert und mit tatsächlichen Preisen abgerechnet.
+Ab 01.10.2025 Stundenmittel der Viertelstundenpreise; Viertelstunden-Arbitrage bietet zusätzliche Erlöse.
+LCOS = (CAPEX × Annuitätenfaktor + OPEX) / jährlich abgegebene Energie.
+Erlös = zahlungswirksamer Handelserlös (brutto); der Verschleißpreis wirkt nur als Steuergröße der Optimierung.
+Effektive Lebensdauer = min(15 Jahre; 6000 Zyklen / Zyklen pro Jahr), abgerundet.
+Sensitivität: Verschleißpreis 0–50 €/MWh steuert Zyklenzahl, Lebensdauer und Break-even (Grafik 27).
+Kapitalwert: 15 Jahre, Zins 0.07, OPEX 0.015 × CAPEX; Variante −3 %/a Erlös.
+Nicht enthalten: Regelleistung, Intraday, Netzentgelte, Preiswirkung des eigenen Einsatzes.
+Batteriepreise sind Annahmen und durch aktuelle Angebote zu ersetzen.

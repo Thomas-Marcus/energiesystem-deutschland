@@ -1,0 +1,8 @@
+C7 · Außenhandel und Pumpspeicher in kritischen Stunden
+Datenbasis: kommerzieller Außenhandel laut SMARD (stündlich, Summe aller Grenzen), Pumpspeicher-Erzeugung
+und -Verbrauch laut SMARD; Nettoexport = Export − Import.
+Verwendete Export-Spalten: 11, Import-Spalten: 11, Netto-Spalte vorhanden: True.
+Kritische Stunden: 100 Stunden mit höchster Residuallast je Jahr; Stunden mit negativem Day-Ahead-Preis;
+Dunkelflauten nach C3 (Wind+PV < 10 % der installierten Leistung über ≥ 24 h).
+Kommerzielle Flüsse weichen von physikalischen Flüssen ab (Ringflüsse, Transit).
+Bis 30.09.2018 gehörte Österreich zur gemeinsamen Gebotszone; Handel mit AT ist davor nicht enthalten.

@@ -1,0 +1,5 @@
+C8 · Flexibilitätswert (Prüfung H3)
+Tagesspreizung = Maximum minus Minimum der stündlichen Day-Ahead-Preise eines Tages; Monatsmittel.
+Regression: Spreizung_m = a + b · PV-Anteil_m (+ c · Preisniveau_m) + Monats-Dummies; OLS mit numpy.
+Konfidenzintervall: Blockbootstrap mit Jahren als Ziehungseinheit, 2000 Wiederholungen.
+Das Preisniveau kontrolliert Brennstoff- und CO2-Preiseffekte, die die Spreizung unabhängig vom PV-Anteil erhöhen.

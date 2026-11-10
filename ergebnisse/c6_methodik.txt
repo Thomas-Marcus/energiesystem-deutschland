@@ -1,0 +1,6 @@
+C6 · Robuste Kannibalisierung
+Capture Rate = Σ(Erzeugung × Preis) / Σ Erzeugung / Base-Preis; PV-Anteil = PV / Netzlast.
+Jahreswerte schließen den Saisoneffekt aus; Monatsregression mit 11 Monats-Dummies (OLS, numpy).
+t-Wert für Spearman: t = ρ × √((n − 2) / (1 − ρ²)); Saisonautokorrelation macht ihn optimistisch.
+Bootstrap mit 2000 Wiederholungen: Monate i.i.d. und Jahresblöcke (Blockbootstrap); 95-%-Perzentilintervall.
+SMARD-Proxy weicht vom offiziellen EEG-Marktwert (netztransparenz.de) geringfügig ab.
