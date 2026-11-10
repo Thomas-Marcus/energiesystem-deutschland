@@ -1,6 +1,6 @@
-﻿Variante;Zusatzenergie [TWh];Überschussstunden;Überschuss [TWh];Defizit [TWh];Residuallast max [GW];Top-100-Mittel [GW]
-S0 Heutige Last;0,000;3422;75,985;127,987;66,222;58,541
-S1 +45 TWh gleichmäßig;45,000;2945;59,775;156,778;72,827;65,080
-S2 Wärmepumpen + Laden ungesteuert;45,000;2952;62,790;159,792;79,703;69,037
-S3 Wärmepumpen + Laden gesteuert;45,000;2936;58,338;155,341;73,929;66,684
-S4 wie S2, Energie × 1,5;67,500;2748;57,241;176,743;86,444;74,666
+﻿Variante;Zusatzenergie [TWh];Überschussstunden;Überschuss [TWh];Defizit [TWh];Residuallast max [GW];Top-100-Mittel [GW];Speicherbedarf bei 50 GW [TWh];Speicherbedarf bei 60 GW [TWh];Speicherbedarf bei 70 GW [TWh]
+S0 Heutige Last;0,000;3422;75,985;127,987;66,222;58,541;0,142;0,020;0,000
+S1 +45 TWh gleichmäßig;45,000;2945;59,775;156,778;72,827;65,080;0,462;0,085;0,006
+S2 Wärmepumpen + Laden ungesteuert;45,000;2952;62,790;159,792;79,703;69,037;0,574;0,122;0,030
+S3 Wärmepumpen + Laden gesteuert;45,000;2936;58,338;155,341;73,929;66,684;0,581;0,124;0,009
+S4 wie S2, Energie × 1,5;67,500;2748;57,241;176,743;86,444;74,666;0,855;0,210;0,064

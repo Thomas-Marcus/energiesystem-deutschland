@@ -1,0 +1,11 @@
+﻿Fahrweise;Speicher [GWh];Überschuss [TWh];Spitze [GW]
+ohne Speicher;0;75,985;66,222
+überschussorientiert;25;69,558;66,222
+spitzenorientiert;25;75,985;59,972
+saisonal kombiniert;25;71,712;59,972
+überschussorientiert;50;64,049;66,222
+spitzenorientiert;50;75,985;56,078
+saisonal kombiniert;50;67,874;56,078
+überschussorientiert;100;54,964;66,222
+spitzenorientiert;100;75,985;52,855
+saisonal kombiniert;100;61,405;52,855

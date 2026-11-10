@@ -3,5 +3,6 @@ Zusatzenergie 2030: Wärmepumpen 25.0 TWh, E-Mobilität 20.0 TWh (Annahmen: ~6 M
 S1 verteilt die Energie proportional zur heutigen Netzlast; S2/S3 nutzen stilisierte Profile:
 Wärmepumpen mit Monatsanteilen nach Heizbedarf (Dez–Feb 49 %) und Morgen-/Abendspitze;
 E-Mobilität ungesteuert mit Abendspitze 17–21 Uhr, gesteuert mit Laden in den Mittagsstunden.
+Speicherbedarf je Variante nach C3 (größtes kumuliertes Defizit über F, Nachladung mit η) für F = 50, 60, 70 GW.
 Temperaturabhängigkeit innerhalb eines Monats (Kältewellen) ist nicht abgebildet; die Spitze ist damit eher unterschätzt.
 Ergebnis ist eine Sensitivität, keine Prognose.

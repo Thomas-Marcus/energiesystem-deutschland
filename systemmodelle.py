@@ -99,6 +99,7 @@ EV_UNGESTEUERT = [0.4, 0.3, 0.3, 0.3, 0.3, 0.4, 0.5, 0.6, 0.6, 0.6, 0.6, 0.6,
                   0.6, 0.6, 0.7, 0.8, 1.0, 1.8, 2.4, 2.6, 2.2, 1.6, 1.0, 0.6]   # Laden nach Ankunft am Abend
 EV_GESTEUERT = [0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.4, 0.8, 1.6, 2.4, 2.6,
                 2.6, 2.4, 1.6, 0.8, 0.4, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3, 0.3]     # Laden in die Mittagsstunden verschoben
+SEKTOR_F_GW = [50.0, 60.0, 70.0]           # gesicherte Leistung für den Speicherbedarf der Lastvarianten (wie C3)
 NW_LAGS_STUNDE = 24                       # Newey-West-Verzögerungen für Stundendaten (ein Tag)
 NW_LAGS_MONAT = 3                         # Newey-West-Verzögerungen für Monatsdaten (Faustregel 4·(n/100)^(2/9))
 
@@ -311,6 +312,54 @@ def spitze_mit_speicher(r: np.ndarray, e_mwh: float, p_mw: float, eta: float = E
     return hi
 
 
+def spitzen_fahren(r: np.ndarray, e_mwh: float, p_mw: float, theta: float, eta: float = ETA_RUNDLAUF) -> np.ndarray:
+    """Spitzenorientierte Fahrweise mit Schwelle θ: entladen oberhalb θ, laden unterhalb θ (Speicher anfangs voll)."""
+    eta_c = eta_d = np.sqrt(eta)
+    soc, aus = e_mwh, np.empty_like(r)
+    for t, x in enumerate(r):
+        if x > theta:
+            d = min(x - theta, p_mw, soc * eta_d)
+            soc -= d / eta_d
+            aus[t] = x - d
+        else:
+            c = min(p_mw, theta - x, (e_mwh - soc) / eta_c)
+            soc += c * eta_c
+            aus[t] = x + c
+    return aus
+
+
+def modell_c1_kombi(df, kap, jahr, ziel, demo):
+    """Speicherfahrweisen im Vergleich: überschussorientiert, spitzenorientiert und saisonal kombiniert
+    (April–September überschussorientiert, Oktober–März spitzenorientiert)."""
+    d = df.loc[str(jahr)].dropna(subset=["netzlast", "pv", "wind_on", "wind_off"])
+    k = kap.loc[str(jahr)].reindex(d.index)
+    erz = sum((d[t] / k[t]).clip(0, 1) * ZIEL_2030_GW[t] * 1000 for t in ("pv", "wind_on", "wind_off"))
+    r = (d["netzlast"] - erz).to_numpy()
+    winter = np.isin(np.asarray(d.index.month), [10, 11, 12, 1, 2, 3])
+    ueber = lambda x: -x[x < 0].sum() / 1e6
+    zeilen = [{"Fahrweise": "ohne Speicher", "Speicher [GWh]": 0, "Überschuss [TWh]": ueber(r), "Spitze [GW]": r.max() / 1000}]
+    for e_gwh in [g for g in SPEICHER_GWH if g > 0]:
+        e, p = e_gwh * 1000.0, e_gwh * 1000.0 / 4
+        a = speicher_fahren(r, e, p)
+        th = spitze_mit_speicher(r, e, p)
+        b = spitzen_fahren(r, e, p, th)
+        th_w = spitze_mit_speicher(r[winter], e, p)
+        c = r.copy()
+        c[~winter] = speicher_fahren(r[~winter], e, p)
+        c[winter] = spitzen_fahren(r[winter], e, p, th_w)
+        for name, x in (("überschussorientiert", a), ("spitzenorientiert", b), ("saisonal kombiniert", c)):
+            zeilen.append({"Fahrweise": name, "Speicher [GWh]": e_gwh, "Überschuss [TWh]": ueber(x), "Spitze [GW]": x.max() / 1000})
+    tab = pd.DataFrame(zeilen).set_index(["Fahrweise", "Speicher [GWh]"])
+    sa.csv_de(tab, ziel / "c1_fahrweisen.csv")
+    methodik(ziel, "c1k", [
+        "C1-Ergänzung · Speicherfahrweisen im Vergleich (Variante V0, Wetterjahr %d)" % jahr,
+        "Überschussorientiert: laden bei negativer, entladen bei positiver Residuallast.",
+        "Spitzenorientiert: niedrigste Schwelle θ (binäre Suche), entladen oberhalb θ, laden unterhalb θ.",
+        "Saisonal kombiniert: April–September überschussorientiert, Oktober–März spitzenorientiert mit eigener Schwelle;",
+        "die Wintermonate werden als zusammenhängende Folge gerechnet (Ladezustand zum Beginn voll).",
+        "Leistung = Energie / 4 h, Rundlauf-Wirkungsgrad 90 %."])
+
+
 def flex_last(r0: pd.Series, zusatz: pd.Series, grenze: pd.Series) -> pd.Series:
     """Verteilt die Tagesenergie 'zusatz' auf die Stunden mit niedrigster Residuallast (gierig, mit Obergrenze)."""
     verteilt = pd.Series(0.0, index=r0.index)
@@ -365,7 +414,10 @@ def modell_c1_sektor(df, kap, jahr, ziel, demo):
     zeilen = []
     for name, last in varianten.items():
         r = (last - erz).to_numpy()
-        zeilen.append({"Variante": name, "Zusatzenergie [TWh]": (last.sum() - d["netzlast"].sum()) / 1e6, **kennzahlen_residual(r)})
+        z = {"Variante": name, "Zusatzenergie [TWh]": (last.sum() - d["netzlast"].sum()) / 1e6, **kennzahlen_residual(r)}
+        for f_gw in SEKTOR_F_GW:
+            z[f"Speicherbedarf bei {f_gw:.0f} GW [TWh]"] = speicherbedarf(r, f_gw * 1000)[0] / 1e6
+        zeilen.append(z)
     tab = pd.DataFrame(zeilen).set_index("Variante")
     sa.csv_de(tab, ziel / "c1_sektorkopplung.csv")
 
@@ -397,6 +449,7 @@ def modell_c1_sektor(df, kap, jahr, ziel, demo):
         "S1 verteilt die Energie proportional zur heutigen Netzlast; S2/S3 nutzen stilisierte Profile:",
         "Wärmepumpen mit Monatsanteilen nach Heizbedarf (Dez–Feb 49 %) und Morgen-/Abendspitze;",
         "E-Mobilität ungesteuert mit Abendspitze 17–21 Uhr, gesteuert mit Laden in den Mittagsstunden.",
+        "Speicherbedarf je Variante nach C3 (größtes kumuliertes Defizit über F, Nachladung mit η) für F = 50, 60, 70 GW.",
         "Temperaturabhängigkeit innerhalb eines Monats (Kältewellen) ist nicht abgebildet; die Spitze ist damit eher unterschätzt.",
         "Ergebnis ist eine Sensitivität, keine Prognose."])
 
@@ -493,6 +546,7 @@ def modell_c1(df, kap, basisjahre, ziel, demo):
     speichern(fig, ziel / "11_szenario_2030_speicherwirkung.png")
 
     modell_c1_sektor(df, kap, bj, ziel, demo)
+    modell_c1_kombi(df, kap, bj, ziel, demo)
 
     methodik(ziel, "c1", [
         "C1 · Profil-Skalierung 2030",
@@ -1165,6 +1219,14 @@ def modell_c6(df, jahre, ziel, demo):
     reg6["KI 2,5 % (Jahresblöcke)"] = [np.nan, bt_tab.loc["Jahresblöcke", "KI 2,5 %"]]
     reg6["KI 97,5 % (Jahresblöcke)"] = [np.nan, bt_tab.loc["Jahresblöcke", "KI 97,5 %"]]
     sa.csv_de(reg6, ziel / "c6_regression.csv")
+    trend = np.arange(len(mt), dtype=float)
+    inf6_t = ols_inferenz(np.column_stack([x_voll, trend]), y, 1, NW_LAGS_MONAT)
+    jk6 = [ols_inferenz(x_voll[jahre_mt != j], y[jahre_mt != j], 1, NW_LAGS_MONAT)["b"] for j in uniq]
+    rob6 = pd.DataFrame([{"Prüfung": "Mit linearem Zeittrend", "b": inf6_t["b"], "SE Newey-West": inf6_t["SE Newey-West"],
+                          "p Newey-West": inf6_t["p Newey-West"], "R²": inf6_t["R²"]}] +
+                        [{"Prüfung": f"Ohne Jahr {int(j)}", "b": b, "SE Newey-West": np.nan, "p Newey-West": np.nan, "R²": np.nan}
+                         for j, b in zip(uniq, jk6)]).set_index("Prüfung")
+    sa.csv_de(rob6, ziel / "c6_robustheit.csv")
     plausi("C6 ohne Monats-Dummies gleiches Vorzeichen wie Spearman-ρ (Monat)", np.sign(k0[1]) == np.sign(rho_m))
     text = ["C6 · Robuste Kannibalisierung",
             f"Spearman ρ Jahresbasis (n = {len(jt)}): {rho_j:+.2f}",
@@ -2014,6 +2076,15 @@ def modell_c8(df, jahre, ziel, demo):
     tab = pd.DataFrame(erg).T
     tab.index.name = "Modell"
     sa.csv_de(tab, ziel / "c8_kennzahlen.csv")
+    _, x8 = schaetze(alle, True)
+    jahre8 = mt["Jahr"].to_numpy()
+    inf8_t = ols_inferenz(np.column_stack([x8, np.arange(len(mt), dtype=float)]), y, 1, NW_LAGS_MONAT)
+    jk8 = [(j, ols_inferenz(x8[jahre8 != j], y[jahre8 != j], 1, NW_LAGS_MONAT)["b"]) for j in np.unique(jahre8)]
+    rob8 = pd.DataFrame([{"Prüfung": "Mit linearem Zeittrend", "b": inf8_t["b"], "SE Newey-West": inf8_t["SE Newey-West"],
+                          "p Newey-West": inf8_t["p Newey-West"], "R²": inf8_t["R²"]}] +
+                        [{"Prüfung": f"Ohne Jahr {int(j)}", "b": b, "SE Newey-West": np.nan, "p Newey-West": np.nan, "R²": np.nan}
+                         for j, b in jk8]).set_index("Prüfung")
+    sa.csv_de(rob8, ziel / "c8_robustheit.csv")
     sa.csv_de(jt, ziel / "c8_jahreswerte.csv")
     sa.csv_de(mt.set_index(["Jahr", "Monat"]), ziel / "c8_monatswerte.csv")
     rho_j = sa._spearman(jt["PV-Anteil [%]"], jt["Tagesspreizung [€/MWh]"])

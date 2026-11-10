@@ -1,0 +1,6 @@
+C1-Ergänzung · Speicherfahrweisen im Vergleich (Variante V0, Wetterjahr 2025)
+Überschussorientiert: laden bei negativer, entladen bei positiver Residuallast.
+Spitzenorientiert: niedrigste Schwelle θ (binäre Suche), entladen oberhalb θ, laden unterhalb θ.
+Saisonal kombiniert: April–September überschussorientiert, Oktober–März spitzenorientiert mit eigener Schwelle;
+die Wintermonate werden als zusammenhängende Folge gerechnet (Ladezustand zum Beginn voll).
+Leistung = Energie / 4 h, Rundlauf-Wirkungsgrad 90 %.
