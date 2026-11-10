@@ -6,9 +6,11 @@ authors:
     given-names: "Thomas Marcus"
     affiliation: "THE PATTERN MIND, Leipzig"
 version: "1.0.0"
+doi: "10.5281/zenodo.24116810"
 date-released: "2026-11-10"
 license: MIT
 repository-code: "https://github.com/Thomas-Marcus/energiesystem-deutschland"
+url: "https://github.com/Thomas-Marcus/energiesystem-deutschland"
 keywords:
   - energy transition
   - residual load
