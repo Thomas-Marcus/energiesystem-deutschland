@@ -5,6 +5,7 @@ authors:
   - family-names: "Köhler"
     given-names: "Thomas Marcus"
     affiliation: "THE PATTERN MIND, Leipzig"
+    orcid: "https://orcid.org/0009-0006-1808-3141"
 version: "1.0.0"
 doi: "10.5281/zenodo.24116810"
 date-released: "2026-11-10"
