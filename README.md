@@ -14,7 +14,7 @@ Programme, Eingabedaten und Ergebnisse zur Arbeit **„Vom Mengenziel zur System
 - **Überschüsse wachsen schneller als ihre Verwertung.** Mit den Ausbauzielen 2030 entstehen bei heutiger Last je nach Wetterjahr 76 bis 117 TWh Überschuss, während die Spitze kaum sinkt.
 - **Versorgungssicherheit hängt zunehmend am europäischen Verbund.** Importe deckten 2025 im Mittel 18 % der Residuallast in den 100 kritischsten Stunden.
 
-![Capture Rate Solar gegen den PV-Anteil an der Netzlast](ergebnisse/DATEINAME.png)
+![Capture Rate Solar gegen den PV-Anteil an der Netzlast](ergebnisse/19_kannibalisierung_robust.png)
 
 ## Inhalt
 
