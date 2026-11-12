@@ -6,6 +6,16 @@ Programme, Eingabedaten und Ergebnisse zur Arbeit **„Vom Mengenziel zur System
 
 *English summary:* This repository contains the code, input data and results of an empirical analysis of Germany's power system based on hourly open data from the Federal Network Agency (SMARD), 2015–2025. Eight system models and four robustness checks cover peak residual load, dark doldrums, battery economics, merit order, solar cannibalisation, the value of flexibility, cross-border trade and a 2030 scenario.
 
+## Zentrale Ergebnisse
+
+- **Die Spitze bleibt das Kernproblem.** Trotz 81 % höherer Wind- und PV-Erzeugung sank die Spitzenresiduallast zwischen 2015 und 2025 nur um 9,5 % auf 68,3 GW, seit 2022 überwiegend wegen gesunkener Nachfrage. In den kritischsten Stunden liefert ein Gigawatt Wind an Land im Mittel 43 MW.
+- **Solarstrom verliert mit steigendem Anteil an Marktwert.** Jeder Prozentpunkt PV-Anteil an der Netzlast geht mit einer um 3,8 Prozentpunkte niedrigeren Capture Rate einher; 2025 erzielte Solarstrom 51,6 % des durchschnittlichen Börsenpreises.
+- **Flexibilität gewinnt an Wert.** Je Prozentpunkt PV-Anteil liegt die tägliche Preisspreizung um 7,8 €/MWh höher. Großbatteriespeicher erreichen mit den Preisen von 2025 einen Break-even von 231 bis 274 €/kWh und liegen damit über dem europäischen Systempreis von rund 160 €/kWh.
+- **Überschüsse wachsen schneller als ihre Verwertung.** Mit den Ausbauzielen 2030 entstehen bei heutiger Last je nach Wetterjahr 76 bis 117 TWh Überschuss, während die Spitze kaum sinkt.
+- **Versorgungssicherheit hängt zunehmend am europäischen Verbund.** Importe deckten 2025 im Mittel 18 % der Residuallast in den 100 kritischsten Stunden.
+
+![Capture Rate Solar gegen den PV-Anteil an der Netzlast](ergebnisse/DATEINAME.png)
+
 ## Inhalt
 
 | Datei / Ordner | Inhalt |
