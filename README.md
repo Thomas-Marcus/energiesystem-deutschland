@@ -1,8 +1,10 @@
 # Energiesystem Deutschland 2015–2025
 
-   [![DOI](https://zenodo.org/badge/1452442782.svg)](https://doi.org/10.5281/zenodo.24116809)
+[![Studie DOI](https://img.shields.io/badge/Studie-10.5281%2Fzenodo.24341518-blue)](https://doi.org/10.5281/zenodo.24341518) [![Code DOI](https://zenodo.org/badge/1452442782.svg)](https://doi.org/10.5281/zenodo.24116809)
 
 Programme, Eingabedaten und Ergebnisse zur Arbeit **„Vom Mengenziel zur Systemfrage. Kosten- und Systemwirkungen der deutschen Stromwende 2015–2025“** von Thomas Marcus Köhler (THE PATTERN MIND, Leipzig).
+
+**Die vollständige Studie (95 Seiten, Preprint) steht auf Zenodo:** [doi.org/10.5281/zenodo.24341518](https://doi.org/10.5281/zenodo.24341518)
 
 *English summary:* This repository contains the code, input data and results of an empirical analysis of Germany's power system based on hourly open data from the Federal Network Agency (SMARD), 2015–2025. Eight system models and four robustness checks cover peak residual load, dark doldrums, battery economics, merit order, solar cannibalisation, the value of flexibility, cross-border trade and a 2030 scenario.
 
@@ -53,6 +55,12 @@ Strommarktdaten: Bundesnetzagentur | SMARD.de. Ergänzende Daten: UBA/AGEE-Stat,
 ## Lizenz und Zitation
 
 Programmcode: MIT-Lizenz (siehe `LICENSE`). Zitationsangaben stehen in `CITATION.cff`.
+
+**Studie zitieren:**
+Köhler, T. M. (2026). *Vom Mengenziel zur Systemfrage. Kosten- und Systemwirkungen der deutschen Stromwende 2015–2025* (Version 1.0) [Preprint]. Zenodo. https://doi.org/10.5281/zenodo.24341518
+
+**Programme zitieren:**
+Köhler, T. M. (2026). *Energiesystem Deutschland 2015–2025: Programme zur Systemanalyse* (Version 1.0.0) [Software]. Zenodo. https://doi.org/10.5281/zenodo.24116809
 
 ## Hinweis zur Entstehung
 

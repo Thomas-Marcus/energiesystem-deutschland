@@ -18,3 +18,16 @@ keywords:
   - electricity market
   - flexibility
   - SMARD
+references:
+  - type: report
+    title: "Vom Mengenziel zur Systemfrage. Kosten- und Systemwirkungen der deutschen Stromwende 2015–2025"
+    authors:
+      - family-names: "Köhler"
+        given-names: "Thomas Marcus"
+        affiliation: "THE PATTERN MIND, Leipzig"
+        orcid: "https://orcid.org/0009-0006-1808-3141"
+    doi: "10.5281/zenodo.24341518"
+    publisher:
+      name: "Zenodo"
+    year: 2026
+    url: "https://doi.org/10.5281/zenodo.24341518"
