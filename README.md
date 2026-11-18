@@ -1,10 +1,10 @@
 # Energiesystem Deutschland 2015–2025
 
-[![Studie DOI](https://img.shields.io/badge/Studie-10.5281%2Fzenodo.24341518-blue)](https://doi.org/10.5281/zenodo.24341518) [![Code DOI](https://zenodo.org/badge/1452442782.svg)](https://doi.org/10.5281/zenodo.24116809)
+[![Studie DOI](https://img.shields.io/badge/Studie-10.5281%2Fzenodo.24341518-blue)](https://zenodo.org/records/24341519) [![Code DOI](https://zenodo.org/badge/1452442782.svg)](https://doi.org/10.5281/zenodo.24116809)
 
 Programme, Eingabedaten und Ergebnisse zur Arbeit **„Vom Mengenziel zur Systemfrage. Kosten- und Systemwirkungen der deutschen Stromwende 2015–2025“** von Thomas Marcus Köhler (THE PATTERN MIND, Leipzig).
 
-**Die vollständige Studie (95 Seiten, Preprint) steht auf Zenodo:** [doi.org/10.5281/zenodo.24341518](https://doi.org/10.5281/zenodo.24341518)
+**Die vollständige Studie (95 Seiten, Preprint) steht auf Zenodo:** [zenodo.org/records/24341519](https://zenodo.org/records/24341519) (DOI 10.5281/zenodo.24341518, Registrierung läuft)
 
 *English summary:* This repository contains the code, input data and results of an empirical analysis of Germany's power system based on hourly open data from the Federal Network Agency (SMARD), 2015–2025. Eight system models and four robustness checks cover peak residual load, dark doldrums, battery economics, merit order, solar cannibalisation, the value of flexibility, cross-border trade and a 2030 scenario.
 
